@@ -14,7 +14,7 @@ public class Temperatura {
 
         System.out.println("Temperatura u Kelvinima je: " + temperaturaKelvin);
 
-        double temperaturaFahrenheit = temperaturaCelzijus * 9 / 5 + 32;
+        double temperaturaFahrenheit = (temperaturaCelzijus * ((double) 9 / 5)) + 32;
 
         System.out.println("Temperatura u Fahrenheitima je: " + temperaturaFahrenheit);
 
