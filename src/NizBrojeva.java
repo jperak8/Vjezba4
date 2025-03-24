@@ -2,23 +2,34 @@ import java.util.Scanner;
 
 public class NizBrojeva {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
+            System.out.print("Koliko brojeva želite unijeti? ");
+            int n = input.nextInt();
 
-        System.out.print("Unesi broj koji označava broj prirodnih brojeva kojih želite ispisati: ");
+            int[] brojevi = new int[n];
 
-        int brojPrirodnihBrojeva = input.nextInt();
-        int[] polje = new int[brojPrirodnihBrojeva];
+            System.out.println("Unesite " + n + " brojeva:");
+            for (int i = 0; i < n; i++) {
+                brojevi[i] = input.nextInt();
+            }
 
-        int najmanjiBroj = polje[0] + 1;
-        int najveciBroj = polje.length;
+            int najmanji = brojevi[0];
+            int najveci = brojevi[0];
 
-        System.out.println("Najmanji broj polja je: " + najmanjiBroj);
-        System.out.println("Najveći broj polja je: " + najveciBroj);
+            for (int i = 1; i < n; i++) {
+                if (brojevi[i] < najmanji) {
+                    najmanji = brojevi[i];
+                }
+                if (brojevi[i] > najveci) {
+                    najveci = brojevi[i];
+                }
+            }
 
-        input.close();
+            System.out.println("Najmanji broj u nizu je: " + najmanji);
+            System.out.println("Najveći broj u nizu je: " + najveci);
 
-    }
-
+            input.close();
+        }
 }
